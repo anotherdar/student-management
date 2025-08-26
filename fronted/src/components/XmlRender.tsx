@@ -10,11 +10,11 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ code, language }) => {
   return Highlight({
     code: code.trim(),
     language,
-    theme: themes.github,
+    theme: themes.oneDark,
     children: ({ style, tokens, getLineProps, getTokenProps }) => (
       <pre
         style={style}
-        className="rounded-xl p-4 text-sm overflow-x-auto bg-muted"
+        className="rounded-sm p-4 text-sm overflow-x-auto bg-muted"
       >
         {tokens.map((line, i) => (
           <div key={i} {...getLineProps({ line })}>
