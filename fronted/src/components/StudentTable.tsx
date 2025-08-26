@@ -4,6 +4,7 @@ import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from ".
 import { DeleteStudentDialog } from "./DeleteStudentDialog";
 import { EditGradesDialog } from "./EditGradesDialog";
 import { ImFilesEmpty } from "react-icons/im";
+import { PreviewStudentXml } from "./PreviewStudentXml";
 
 
 type StudentTableProps = {
@@ -55,6 +56,7 @@ export const StudentTable: FC<StudentTableProps> = ({ students, onEditGrades, on
                             <TableCell className="w-1/7 text-left flex flex-row gap-2">
                                 <EditGradesDialog student={student} onEdit={(grades) => onEditGrades(student.id, grades)} isLoading={isUpdating} isError={isUpdatingError} />
                                 <DeleteStudentDialog student={student} onDelete={() => onDelete(student)} isLoading={isDeleting} />
+                                <PreviewStudentXml student={student} />
                             </TableCell>
                         </TableRow>
                     ))}
